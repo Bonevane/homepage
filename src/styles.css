@@ -1,3 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(0, 0, 0, 0.01);
+  box-sizing: border-box;
   margin: 0px;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: white;
+}
+
+button {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+button:hover {
+  color: rgb(150, 150, 150);
+  border-color: rgb(150, 150, 150);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.nav-bar {
+  position: fixed;
+  display: flex;
+  z-index: 12;
+  color: white;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  transition:
+    background-color 300ms ease,
+    color 260ms ease,
+    padding 180ms ease,
+    backdrop-filter 300ms ease;
+}
+
+.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 12px 40px;
+  backdrop-filter: blur(50px);
+}
+
+.scrolled > .nav-btns > button {
+  padding: 8px 20px;
+}
+
+.nav-logo-btn {
+  font-size: 1.8rem;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+.nav-btns {
+  background-color: transparent;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.nav-btns > button {
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  border: none;
+  color: inherit;
+}
+
+.nav-btns > button:hover {
+  color: rgb(150, 150, 150);
+  border-color: rgb(150, 150, 150);
+}
+
+.nav-btns > .nav-home-btn {
+  border: 1px solid white;
+}
+
+.top-img {
+  background-image: url(https://danishmunib.weebly.com/uploads/1/4/6/2/146277355/background-images/1382972328.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+}
+
+.top-img > p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1.8px;
+  color: white;
+  padding: 72vh 100px 15vh 40px;
+}
+
+/* Main Content */
+
+.main-content {
+  display: flex;
+  background-color: transparent;
+}
+
+.main-left,
+.main-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  padding: 60px 40px;
+}
+
+.main-right p,
+.main-left p,
+.main-left div {
+  background-color: transparent;
+}
+
+.main-left .about-text {
+  color: rgb(98, 98, 98);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-text p {
+  line-height: 30px;
+  overflow-wrap: break-word;
+}
+
+.main-right {
+  padding: 60px 40px;
+}
+
+.about-me {
+  font-size: smaller;
+  font-weight: bold;
+  color: rgb(98, 98, 98);
+}
+
+.name {
+  color: rgb(98, 98, 98);
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.socials-btns > button {
+  border: none;
+  padding: none;
+  margin: none;
+  transition: 200ms;
+}
+
+.socials-btns > button:hover {
+  opacity: 70%;
+}
+
+.quote {
+  font-weight: bold;
+  padding-top: 40px;
+  text-align: right;
+  line-height: 30px;
+  overflow-wrap: break-word;
+}
+
+.main-right img {
+  max-width: 100%; /* Ensures the image scales down */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Make the sections stack when the screen width is small */
+@media screen and (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center;
+  }
+
+  .main-left,
+  .main-right {
+    max-width: 100%; /* Makes sections take full width */
+    text-align: center;
+  }
+
+  .main-right img {
+    max-width: 100%; /* Ensures the image scales down */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  .quote {
+    text-align: center; /* Center-aligns the quote */
+  }
+}
+
+/* Portfolio */
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(98, 98, 98);
+  gap: 40px;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.portfolio-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.portfolio-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.portfolio-component img {
+  width: 100%;
+  max-width: 45rem;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.portfolio-component img:hover {
+  transform: scale(1.02);
+}
+
+.portfolio-component > div {
+  overflow: hidden;
+}
+
+.portfolio-component > p {
+  font-weight: bold;
+  font-size: smaller;
+}
+
+/* Contact */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  gap: 40px;
+  background-image: url(https://danishmunib.weebly.com/uploads/1/4/6/2/146277355/background-images/459525405.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+}
+
+.contact > h2 {
+  color: white;
+}
+
+form {
+  padding: 10px;
+  background-color: transparent;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  transition: all 300ms;
+  color: white;
+  backdrop-filter: blur(40px);
+}
+
+input:hover,
+textarea:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+input:focus,
+textarea:focus {
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.name-fields {
+  display: flex;
+  gap: 10px;
+}
+
+.name-fields input {
+  flex: 1;
+}
+
+.required {
+  color: red;
+}
+
+.submit-button {
+  background: none;
+  border: 1px solid black;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  width: fit-content;
+  backdrop-filter: blur(20px);
+}
+
+.submit-button:hover {
+  background: black;
+  color: white;
+}
+
+.required-text {
+  padding-left: 10px;
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
