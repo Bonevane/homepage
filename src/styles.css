@@ -27,6 +27,72 @@ button:hover {
   visibility: hidden;
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(20px);
+  gap: 2rem;
+  z-index: 20;
+
+  /* Transformation */
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-menu.open {
+  transform: translateY(0);
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-menu a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: rgb(150, 150, 150);
+}
+
+/* Media Queries (Finally) */
+@media screen and (max-width: 768px) {
+  .nav-bar .nav-btns {
+    visibility: hidden;
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
 .nav-bar {
   position: fixed;
   display: flex;
@@ -56,6 +122,7 @@ button:hover {
 
 .nav-logo-btn {
   font-size: 1.8rem;
+  text-align: start;
   color: inherit;
   background-color: transparent;
   border: none;
@@ -169,30 +236,29 @@ button:hover {
 }
 
 .main-right img {
-  max-width: 100%; /* Ensures the image scales down */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 100%;
+  height: auto;
 }
 
-/* Make the sections stack when the screen width is small */
 @media screen and (max-width: 768px) {
   .main-content {
-    flex-direction: column; /* Stacks elements vertically */
+    flex-direction: column;
     align-items: center;
   }
 
   .main-left,
   .main-right {
-    max-width: 100%; /* Makes sections take full width */
+    max-width: 100%;
     text-align: center;
   }
 
   .main-right img {
-    max-width: 100%; /* Ensures the image scales down */
-    height: auto; /* Maintains aspect ratio */
+    max-width: 100%;
+    height: auto;
   }
 
   .quote {
-    text-align: center; /* Center-aligns the quote */
+    text-align: center;
   }
 }
 
