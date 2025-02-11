@@ -1,3 +1,5 @@
-# Webpack-Template
+# Portfolio Homepage
 
-A simple template to make things easier.
+A portfolio homepage made for The Odin Project.
+
+[Credits](https://danishmunib.weebly.com/)
