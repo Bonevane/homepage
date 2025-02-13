@@ -71,14 +71,15 @@ button:hover {
   cursor: pointer;
 }
 
-.nav-menu a {
+.nav-menu p {
+  cursor: pointer;
   color: white;
   font-size: 1.5rem;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.nav-menu a:hover {
+.nav-menu p:hover {
   color: rgb(150, 150, 150);
 }
 
