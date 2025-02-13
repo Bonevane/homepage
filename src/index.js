@@ -7,6 +7,10 @@ import landscape_bg_image from "./images/misc/landscape.jpg";
 import architecture_bg_image from "./images/misc/architecture.jpg";
 import coverage_bg_image from "./images/misc/coverage.jpg";
 import macro_bg_image from "./images/misc/macro.jpg";
+import personal_bg_image from "./images/architecture/personal/personal-front.jpg";
+import em_en_bg_image from "./images/architecture/em-en/em-en-front.jpg";
+import at_cafe_bg_image from "./images/architecture/at-cafe/at-cafe-front.jpg";
+import kickstart_bg_image from "./images/architecture/kickstart/kickstart-front.jpg";
 
 import { home_html, home_img_html } from "./home.js";
 import { photography_html, photography_img_html } from "./photography.js";
@@ -19,6 +23,22 @@ import {
 } from "./pages/architecture.js";
 import { coverage_html, coverage_img_html } from "./pages/coverage.js";
 import { macro_html, macro_img_html } from "./pages/macro.js";
+import {
+  at_cafe_html,
+  at_cafe_img_html,
+} from "./pages/architecture/at-cafe.js";
+import {
+  em_en_cafe_html,
+  em_en_cafe_img_html,
+} from "./pages/architecture/em-en-cafe.js";
+import {
+  kickstart_html,
+  kickstart_img_html,
+} from "./pages/architecture/kickstart.js";
+import {
+  personal_html,
+  personal_img_html,
+} from "./pages/architecture/personal.js";
 
 document.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
@@ -103,9 +123,28 @@ document.addEventListener("DOMContentLoaded", function () {
       img: macro_img_html,
       content: macro_html,
     },
+    at: {
+      bg: at_cafe_bg_image,
+      img: at_cafe_img_html,
+      content: at_cafe_html,
+    },
+    em: {
+      bg: em_en_bg_image,
+      img: em_en_cafe_img_html,
+      content: em_en_cafe_html,
+    },
+    kickstart: {
+      bg: kickstart_bg_image,
+      img: kickstart_img_html,
+      content: kickstart_html,
+    },
+    personal: {
+      bg: personal_bg_image,
+      img: personal_img_html,
+      content: personal_html,
+    },
   };
 
-  // Function to load a page dynamically
   function loadPage(page) {
     if (!pages[page]) return;
 
@@ -129,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setLinks();
   }
 
-  // Attach event listeners dynamically
   function setLinks() {
     [
       "home",
@@ -140,6 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "coverage",
       "macro",
       "architecture",
+      "em",
+      "at",
+      "personal",
+      "kickstart",
     ].forEach((page) => {
       document.querySelectorAll(`#${page}-link`).forEach((element) => {
         element.addEventListener("click", () => loadPage(page));
@@ -147,11 +189,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Assign click events to navigation buttons
+  // Navigation buttons
   Object.entries(navButtons).forEach(([page, button]) => {
     button.addEventListener("click", () => loadPage(page));
   });
 
-  // Load default page
   loadPage("home");
 });
+
+window.openLightbox = function openLightbox(imageSrc) {
+  document.getElementById("lightbox-img").src = imageSrc;
+  document.getElementById("lightbox").style.display = "block";
+};
+
+window.closeLightbox = function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+};

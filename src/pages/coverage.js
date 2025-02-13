@@ -49,12 +49,3 @@ export const coverage_html = `
     <img class="lightbox-content" id="lightbox-img">
   </div>
 `;
-
-window.openLightbox = function openLightbox(imageSrc) {
-  document.getElementById("lightbox-img").src = imageSrc;
-  document.getElementById("lightbox").style.display = "block";
-};
-
-window.closeLightbox = function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-};
