@@ -3,11 +3,22 @@ import photography_bg_image from "./images/photography/leaves.jpg";
 import home_bg_image from "./images/home/home_bg_image.jpg";
 import visualization_bg_image from "./images/visualization/visualization.jpg";
 import contact_bg_image from "./images/contact/contact.jpg";
+import landscape_bg_image from "./images/misc/landscape.jpg";
+import architecture_bg_image from "./images/misc/architecture.jpg";
+import coverage_bg_image from "./images/misc/coverage.jpg";
+import macro_bg_image from "./images/misc/macro.jpg";
 
 import { home_html, home_img_html } from "./home.js";
 import { photography_html, photography_img_html } from "./photography.js";
 import { visualization_html, visualization_img_html } from "./visualization.js";
 import { contact_html, contact_img_html } from "./contact.js";
+import { landscape_html, landscape_img_html } from "./pages/landscape.js";
+import {
+  architecture_html,
+  architecture_img_html,
+} from "./pages/architecture.js";
+import { coverage_html, coverage_img_html } from "./pages/coverage.js";
+import { macro_html, macro_img_html } from "./pages/macro.js";
 
 document.addEventListener("scroll", function () {
   const navbar = document.getElementById("navbar");
@@ -72,6 +83,26 @@ document.addEventListener("DOMContentLoaded", function () {
       img: contact_img_html,
       content: contact_html,
     },
+    landscape: {
+      bg: landscape_bg_image,
+      img: landscape_img_html,
+      content: landscape_html,
+    },
+    architecture: {
+      bg: architecture_bg_image,
+      img: architecture_img_html,
+      content: architecture_html,
+    },
+    coverage: {
+      bg: coverage_bg_image,
+      img: coverage_img_html,
+      content: coverage_html,
+    },
+    macro: {
+      bg: macro_bg_image,
+      img: macro_img_html,
+      content: macro_html,
+    },
   };
 
   // Function to load a page dynamically
@@ -91,7 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
     Object.values(navButtons).forEach((btn) =>
       btn.classList.remove("current-tab")
     );
-    navButtons[page].classList.add("current-tab");
+
+    if (navButtons[page]) navButtons[page].classList.add("current-tab");
 
     // Reattach event listeners
     setLinks();
@@ -99,7 +131,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Attach event listeners dynamically
   function setLinks() {
-    ["home", "photography", "visualization", "contact"].forEach((page) => {
+    [
+      "home",
+      "photography",
+      "visualization",
+      "contact",
+      "landscape",
+      "coverage",
+      "macro",
+      "architecture",
+    ].forEach((page) => {
       document.querySelectorAll(`#${page}-link`).forEach((element) => {
         element.addEventListener("click", () => loadPage(page));
       });

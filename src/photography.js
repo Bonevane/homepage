@@ -12,19 +12,19 @@ export const photography_img_html = `<div class="photography-top-img">
 
 export const photography_html = `
 <div class="photography-content">
-        <div class="photography-component">
+        <div class="photography-component" id="landscape-link">
           <div><img src="${landscape}" alt="" /></div>
           <p>Landscape</p>
         </div>
-        <div class="photography-component">
+        <div class="photography-component" id="architecture-link">
           <div><img src="${architecture}" alt="" /></div>
           <p>Architecture</p>
         </div>
-        <div class="photography-component">
+        <div class="photography-component" id="coverage-link">
           <div><img src="${coverage}" alt="" /></div>
           <p>Coverage</p>
         </div>
-        <div class="photography-component">
+        <div class="photography-component" id="macro-link">
           <div><img src="${macro}" alt="" /></div>
           <p>Macro</p>
         </div>

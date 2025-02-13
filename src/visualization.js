@@ -23,7 +23,6 @@ export const visualization_img_html = `<div class="visualization-top-img">
       </div>`;
 
 export const visualization_html = `
-<div class="made-in-blender"><p>Made in Blender with ❤️</p></div>
 <div class="gallery">
   ${[a, b, c, d, e, f, g, h, i, j, k, l, m, n, o]
     .map(

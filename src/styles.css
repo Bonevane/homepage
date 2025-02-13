@@ -167,3 +167,19 @@ button:hover {
   color: white;
   padding: 82vh 100px 16vh 40px;
 }
+
+/* Generic Pages (Like the landscape, coverage etc) */
+
+.generic-top-img {
+  display: flex;
+  justify-content: space-between;
+  padding: 80vh 3rem 18vh;
+}
+
+.generic-top-img p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: 1.8px;
+}
