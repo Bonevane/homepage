@@ -1,3 +1,4 @@
+import "./pages/photography.css";
 import landscape from "./images/photography/landscape.jpg";
 import architecture from "./images/photography/architecture.jpg";
 import coverage from "./images/photography/coverage.jpg";

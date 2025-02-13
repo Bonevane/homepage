@@ -1,3 +1,4 @@
+import "./pages/home.css";
 import home_dmunib from "./images/home/dmunib.jpg";
 import home_photography from "./images/home/photography.jpg";
 import home_visualization from "./images/home/visualization.jpg";

@@ -2,7 +2,7 @@ import "./styles.css";
 import photography_bg_image from "./images/photography/leaves.jpg";
 import home_bg_image from "./images/home/home_bg_image.jpg";
 import visualization_bg_image from "./images/visualization/visualization.jpg";
-import contact_bg_image from "./images/home/home_bg_image.jpg";
+import contact_bg_image from "./images/contact/contact.jpg";
 
 import { home_html, home_img_html } from "./home.js";
 import { photography_html, photography_img_html } from "./photography.js";

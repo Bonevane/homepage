@@ -1,0 +1,79 @@
+/* Photography Page */
+
+.photography-top-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35vh 10px;
+  color: white;
+  gap: 24px;
+}
+
+.photography-top-img > p {
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+}
+
+.photography-top-img > h1 {
+  text-align: center;
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-size: 4.4rem;
+}
+
+.photography-top-img > button {
+  font-weight: bold;
+  padding: 14px 30px;
+  background-color: white;
+  color: #000000;
+  border: 1px solid white;
+  margin-top: 2rem;
+}
+
+.photography-top-img > button:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.photography-content {
+  margin: 3rem 0px;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.photography-component {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.photography-component img {
+  width: 100%;
+  max-width: 45rem;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.photography-component img:hover {
+  transform: scale(1.02);
+}
+
+.photography-component > div {
+  overflow: hidden;
+}
+
+.photography-component > p {
+  position: absolute;
+  color: white;
+  font-family: "Playfair Display";
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}

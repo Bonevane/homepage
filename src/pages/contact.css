@@ -1,0 +1,25 @@
+/* Contact Page */
+
+.contact-top-img {
+  padding: 56vh 0px 18vh;
+  color: white;
+}
+
+.contact-top-img h1,
+.contact-top-img .socials-btns {
+  padding: 0px 12%;
+}
+
+.contact-top-img p {
+  color: rgb(225, 225, 225);
+  padding-top: 10px;
+}
+
+.contact-top-img .contact-text {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.contact-text {
+  padding: 64px 12%;
+}
