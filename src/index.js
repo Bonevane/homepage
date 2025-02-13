@@ -50,7 +50,10 @@ document.addEventListener("scroll", function () {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {});
+
 document.addEventListener("DOMContentLoaded", function () {
+  // Hamburger Menu
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const fullscreenMenu = document.getElementById("fullscreen-menu");
   const closeMenuBtn = document.getElementById("close-menu");
@@ -71,9 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
       fullscreenMenu.classList.remove("open");
     }
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Actual Page
   const app = document.querySelector(".main"); // Main content area
   const bgPhoto = document.querySelector(".top-img");
 
@@ -184,7 +186,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "kickstart",
     ].forEach((page) => {
       document.querySelectorAll(`#${page}-link`).forEach((element) => {
-        element.addEventListener("click", () => loadPage(page));
+        element.addEventListener("click", () => {
+          loadPage(page);
+          fullscreenMenu.classList.remove("open");
+        });
       });
     });
   }
