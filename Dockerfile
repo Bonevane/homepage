@@ -1,13 +1,28 @@
-# Use the official lightweight Nginx image
-FROM nginx:alpine
+# -------- STAGE 1: Build with Node & Webpack --------
+    FROM node:20 AS builder
 
-# Remove default HTML files from Nginx
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copy everything from your src folder to Nginx's web root
-# COPY src/ /usr/share/nginx/html/
-COPY src/template.html /usr/share/nginx/html/index.html
-
-
-# Expose port 80 for web traffic
-EXPOSE 80
+    # Set working directory inside the container
+    WORKDIR /app
+    
+    # Copy package files and install dependencies
+    COPY package.json package-lock.json* ./ 
+    RUN npm install
+    
+    # Copy the rest of the app source
+    COPY . .
+    
+    # Build the app with Webpack (adjust if you use a custom script)
+    RUN npm run build
+    
+# -------- STAGE 2: Serve with Nginx --------
+    FROM nginx:alpine
+    
+    # Remove default Nginx static content
+    RUN rm -rf /usr/share/nginx/html/*
+    
+    # Copy built files from the previous stage
+    COPY --from=builder /app/dist /usr/share/nginx/html
+    
+    # Expose web port
+    EXPOSE 80
+    
